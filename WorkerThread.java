@@ -23,7 +23,7 @@ public class WorkerThread implements Runnable {
 		sendEmail(id,from_address,to_address,subject,body);
 		System.out.println(Thread.currentThread().getName() + "End.");
 
-		Connection connection = Database.startConnection();  // start connection
+		Connection connection = Database.getConnection();  // start connection
 		Database.updateDataInTable(connection, id);          // Update in table sent=true after every email is sent by a thread.
 		Database.closeConnection(connection);                // Close connection
 	}
