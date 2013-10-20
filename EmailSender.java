@@ -36,7 +36,7 @@ public class EmailSender {
 	public static void main(String[] args) throws ClassNotFoundException,SQLException {
         
 		/* Start connection with the Database */
-		Connection connection = Database.startConnection(); 
+		Connection connection = Database.getConnection(); 
 		
 		/* This while loop is started for infinite times so that it can keep on fetching a particular number of records 
 		 * and keep sending them to the thread pool executer. As long as the resultset is getting records it will continue
